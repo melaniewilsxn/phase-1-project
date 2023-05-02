@@ -1,1 +1,9 @@
-body {}
+body {
+    margin: 10px;
+    font-family: monospace;
+}
+
+#biteNYC-header {
+    display: flex;
+    justify-content: center;
+}

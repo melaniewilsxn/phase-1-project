@@ -12,6 +12,57 @@
           alt="biteNYC-header"
         />
       </div>
+      <div class="container">
+        <form class="add-restaurant-form">
+          <h3>Add a restaurant!</h3>
+
+          <label for="new_restaurant_name">Name:</label>
+          <input
+            type="text"
+            id="new_restaurant_name"
+            name="Name"
+            value=""
+            placeholder="Restaurant's name..."
+            class="input-text"
+          />
+          <br />
+          <label for="new_restaurant_image">Image:</label>
+          <input
+            type="text"
+            id="new_restaurant_image"
+            name="Image"
+            value=""
+            placeholder="Image URL..."
+            class="input-text"
+          />
+          <br />
+          <label for="new_restaurant_neighborhood">Neighborhood:</label>
+          <input
+          type="text"
+          id="new_restaurant_neighborhood"
+          name="Neighborhood"
+          value=""
+          placeholder="Restaurant's neighborhood..."
+          class="input-text"
+          />
+          <br />
+          <label for="new_restaurant_rating">Rating:</label>
+          <select id="new_restaurant_rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <br />
+          <input
+            type="submit"
+            name="submit"
+            value="Add Restaurant"
+            class="submit"
+          />
+        </form>
+      </div>
     <script src="script.js"></script>
   </body>
 </html>

@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
         restaurantFormContainer.style.display = "none";
       }
     });
-    // getAllRestaurants()
+    getAllRestaurants()
     document.querySelector('.add-restaurant-form').addEventListener('submit', handleSubmit)
   });
 
@@ -41,18 +41,17 @@ function renderOneRestaurant(restaurant){
   let card = document.createElement('div')
   card.className = 'card'
   card.innerHTML = `
-  <h2>${restaurant.name} - Your BiteNYC Rating: ${restaurant.rating}
-    <button class="favorite-btn" id="${restaurant.id}">
-      <i class="fa fa-star"></i>
-    </button>
-  </h2>
+  <h2>${restaurant.name}</h2>
+  <h3>Your BiteNYC Rating: ${restaurant.rating}
+    <button class="favorite-btn" id="${restaurant.id}"><i class="fa fa-star"></i></button>
+  </h3>
   <img src="${restaurant.image}" class="restaurant-avatar" />
   <h3>${restaurant.neighborhood}</h3>
-  <p>Additional comments: ${restaurant.comments}</p>
+  <p><b>Additional comments:</b> ${restaurant.comments}</p>
   `
   
   card.querySelector('.favorite-btn').addEventListener('click', () => {
-    document.querySelector('.favorite-btn').classList.toggle('favorited')
+    document.getElementById(`${restaurant.id}`).classList.toggle('favorited')
   })
   
     //Add restaurant card to DOM

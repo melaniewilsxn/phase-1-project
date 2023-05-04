@@ -22,9 +22,9 @@ body {
     padding: 15px;
 }
 
-.add-toy-form {
+/* .add-restaurant-form {
     width: 80%
-}
+} */
 
 .favorite-btn {
     background: transparent;
@@ -36,4 +36,22 @@ body {
   
   .favorite-btn.favorited {
     color: #FFCE00;
+  }
+
+  .card {
+    text-align: center;
+    border: grey solid 1px;
+    padding: 1rem;
+    width: 15rem;
+    height: 35rem;
+    display: inline-grid;
+    margin: 1rem 2rem;
+    box-shadow: 3px 4px #c6001e;
+  }
+  
+  .restaurant-avatar {
+    justify-self: center;
+    height: 12rem;
+    width: 100%;
+    object-fit: contain;
   }

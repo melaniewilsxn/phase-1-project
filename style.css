@@ -25,3 +25,15 @@ body {
 .add-toy-form {
     width: 80%
 }
+
+.favorite-btn {
+    background: transparent;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    font-size: 24px;
+  }
+  
+  .favorite-btn.favorited {
+    color: #FFCE00;
+  }

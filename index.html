@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="https://fontmeme.com/permalink/230502/33bb5337bea8a0c307143e12e778c401.png">
     <title>BiteNYC</title>
   </head>
@@ -44,7 +45,7 @@
         class="input-text"
         />
         <label for="new_restaurant_rating">Rating:</label>
-        <select id="new_restaurant_rating">
+        <select id="new_restaurant_rating" name="rating">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -72,6 +73,7 @@
     <p style="text-align:center">
       <button id="new-restuarant-btn">Add a new restuarant</button>
     </p>
+    <div id="restaurant-collection"></div>
     <script src="script.js"></script>
   </body>
 </html>

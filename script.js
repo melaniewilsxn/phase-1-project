@@ -16,22 +16,45 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('.add-restaurant-form').addEventListener('submit', handleSubmit)
   });
 
-  function handleSubmit(e){
-    e.preventDefault()
-    let restaurantObj = {
-      name: e.target.name.value,
-      image: e.target.image.value,
-      neighborhood: e.target.neighborhood.value,
-    //   rating: e.target.rating.value,
-      comments: e.target.comments.value
-    }
-    console.log(restaurantObj)
-    // renderOneToy(restaurantObj)
-    // postToy(restaurantObj)
+function handleSubmit(e){
+  e.preventDefault()
+  let restaurantObj = {
+    name: e.target.name.value,
+    image: e.target.image.value,
+    neighborhood: e.target.neighborhood.value,
+    rating: e.target.rating.value,
+    comments: e.target.comments.value
   }
+  renderOneRestaurant(restaurantObj)
+  // postToy(restaurantObj)
+}
 
-//   function getAllRestaurants(){
-//     fetch("http://localhost:3000/toys")
-//     .then(res => res.json())
-//     .then(restaurantData => restaurantData.forEach(restaurant => renderOneRestaurant(restaurant)))
-//   }
+//Gets all restuarants from db.json file
+function getAllRestaurants(){
+  fetch("http://localhost:3000/restaurants")
+  .then(res => res.json())
+  .then(restaurantData => restaurantData.forEach(restaurant => renderOneRestaurant(restaurant)))
+}
+
+function renderOneRestaurant(restaurant){
+  //Build restaurant
+  let card = document.createElement('div')
+  card.className = 'card'
+  card.innerHTML = `
+  <h2>${restaurant.name} - Your BiteNYC Rating: ${restaurant.rating}
+    <button class="favorite-btn" id="${restaurant.id}">
+      <i class="fa fa-star"></i>
+    </button>
+  </h2>
+  <img src="${restaurant.image}" class="restaurant-avatar" />
+  <h3>${restaurant.neighborhood}</h3>
+  <p>Additional comments: ${restaurant.comments}</p>
+  `
+  
+  card.querySelector('.favorite-btn').addEventListener('click', () => {
+    document.querySelector('.favorite-btn').classList.toggle('favorited')
+  })
+  
+    //Add restaurant card to DOM
+    document.querySelector('#restaurant-collection').appendChild(card)
+}

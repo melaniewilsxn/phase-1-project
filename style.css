@@ -17,7 +17,7 @@ body {
     margin: 0 auto;
     width: 55%;
     height: auto;
-    display: flex;
+    display: none;
     background: #515DA2;
     padding: 15px;
 }

@@ -39,6 +39,9 @@ function getAllRestaurants(){
 function renderOneRestaurant(restaurant){
   //Build restaurant
   let card = document.createElement('div')
+  let btn = document.createElement('button')
+  btn.textContent = 'Remove restaurant'
+  btn.addEventListener('click', handleDelete)
   card.className = 'card'
   card.innerHTML = `
   <h2>${restaurant.name}</h2>
@@ -54,6 +57,12 @@ function renderOneRestaurant(restaurant){
     document.getElementById(`${restaurant.id}`).classList.toggle('favorited')
   })
   
-    //Add restaurant card to DOM
-    document.querySelector('#restaurant-collection').appendChild(card)
+  //Add restaurant card to DOM
+  card.appendChild(btn)
+  document.querySelector('#restaurant-collection').appendChild(card)
+}
+
+function handleDelete(e){
+  console.log("delete")
+  //e.target.parentNode.remove()
 }

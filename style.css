@@ -1,30 +1,26 @@
 body {
     padding: 1rem;
     font-family: monospace;
-    /* background: black; */
 }
 
 #biteNYC-header {
     display: flex;
     justify-content: center;
-    padding-bottom: 25px;
+    padding: 10px 0px;
+    border-bottom: thick double #c6001e;
 }
 
 .container {
     text-align: center;
     justify-content: center;
-    margin-top: 10px;
-    margin: 0 auto;
+    margin: 10px auto;
     width: 55%;
     height: auto;
     display: none;
-    background: #515DA2;
     padding: 15px;
+    border: grey solid 1px;
+    box-shadow: 3px 4px #c6001e;
 }
-
-/* .add-restaurant-form {
-    width: 80%
-} */
 
 .favorite-btn {
     background: transparent;
@@ -41,12 +37,27 @@ body {
   .card {
     text-align: center;
     border: grey solid 1px;
-    padding: 1rem;
-    width: 15rem;
-    height: 35rem;
+    padding: 16px;
+    width: 350px;
+    height: 450px;
     display: inline-grid;
-    margin: 1rem 2rem;
+    margin: 16px 32px;
     box-shadow: 3px 4px #c6001e;
+  }
+
+  .card h2 {
+    font-size: 24px;
+    margin: 0px 10px;
+  }
+
+  .card h3 {
+    font-size: 16px;
+    margin: 0px 10px;
+  }
+
+  .card p {
+    font-size: 12px;
+    margin: 0px 10px;
   }
   
   .restaurant-avatar {
@@ -54,4 +65,17 @@ body {
     height: 12rem;
     width: 100%;
     object-fit: contain;
+  }
+
+  button {
+    position: relative;
+    background-color: #FFCE00;
+    border: none;
+    border-radius: 5px;
+    height: 2rem;
+    width: max-content;
+    color: #c6001e;
+    font-size: 15px;
+    font-family: monospace;
+    justify-self: center;
   }

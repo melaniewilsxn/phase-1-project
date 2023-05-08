@@ -50,7 +50,7 @@ function renderOneRestaurant(restaurant){
   </h3>
   <img src="${restaurant.image}" class="restaurant-avatar" />
   <h3>${restaurant.neighborhood}</h3>
-  <p><b>Additional comments:</b> ${restaurant.comments}</p>
+  <p class="comments"><b>Additional comments:</b> ${restaurant.comments}</p>
   `
   
   card.querySelector('.favorite-btn').addEventListener('click', () => {

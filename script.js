@@ -171,6 +171,18 @@ function alphabetizeFilter(){
 
 function rateFilter(){
   showRestaurants()
+  //console.log(document.getElementById("restaurant-collection").querySelector('h3').textContent)
+  let container = document.getElementById("restaurant-collection");
+  let cards = container.querySelectorAll(".card");
+  let sortedCards = Array.from(cards).sort(function(a, b) {
+    let restaurantA = a.querySelector('h3').textContent;
+    let restaurantB = b.querySelector('h3').textContent;
+    return restaurantA.localeCompare(restaurantB);
+  });
+  sortedCards.reverse()
+  sortedCards.forEach(function(card) {
+    container.appendChild(card);
+  });
 }
 
 function favoriteFilter(){

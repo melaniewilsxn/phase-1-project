@@ -39,7 +39,7 @@ body {
     border: grey solid 1px;
     padding: 16px;
     width: 350px;
-    height: 450px;
+    min-height: 450px;
     display: inline-grid;
     margin: 16px 32px;
     box-shadow: 3px 4px #c6001e;

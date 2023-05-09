@@ -14,6 +14,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     getAllRestaurants()
     document.querySelector('.add-restaurant-form').addEventListener('submit', handleSubmit)
+
+    let filter = document.getElementById('restaurant-dropdown')
+    let restaurantList = document.getElementById('restaurant-collection').getElementsByTagName('div')
+
+    console.log(filter.value)
+    console.log(restaurantList)
+
+    filter.addEventListener('change', () => {
+      for (let i = 0; i < restaurantList.length; i++) {
+          if (filter.value === "all"){
+            restaurantList[i].style.display = "block"
+          } else if (filter.value === "a") {
+
+          } else if (filter.value === "z"){
+
+          } else if (filter.value === "rating"){
+
+          } else {
+
+          }
+        }
+    })
   });
 
 function handleSubmit(e){

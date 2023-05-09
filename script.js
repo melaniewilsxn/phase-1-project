@@ -63,6 +63,5 @@ function renderOneRestaurant(restaurant){
 }
 
 function handleDelete(e){
-  console.log("delete")
-  //e.target.parentNode.remove()
+  e.target.parentNode.remove()
 }

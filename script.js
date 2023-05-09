@@ -26,7 +26,7 @@ function handleSubmit(e){
     comments: e.target.comments.value
   }
   renderOneRestaurant(restaurantObj)
-  // postToy(restaurantObj)
+  postRestaurant(restaurantObj)
 }
 
 //Gets all restuarants from db.json file
@@ -64,4 +64,16 @@ function renderOneRestaurant(restaurant){
 
 function handleDelete(e){
   e.target.parentNode.remove()
+}
+
+function postRestaurant(restaurantObj){
+  fetch("http://localhost:3000/restaurants", {
+    method: 'POST',
+    headers: {
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+    },
+
+    body: JSON.stringify(restaurantObj)
+  })
 }

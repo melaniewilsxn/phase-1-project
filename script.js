@@ -68,7 +68,6 @@ function renderOneRestaurant(restaurant){
   
   card.querySelector('.favorite-btn').addEventListener('click', () => {
     let className = document.getElementById(`${restaurant.id}`).classList
-    // document.getElementById(`${restaurant.id}`).classList.toggle('favorited')
     if (restaurant.favorite === "no"){
       restaurant.favorite = "yes"
       className.add("favorited")
@@ -129,11 +128,27 @@ function postRestaurant(restaurantObj){
   })
 }
 
+function getRestaurantRating(){
+  fetch("http://localhost:3000/restaurants")
+  .then(res => res.json())
+  .then(restaurantData => restaurantData.forEach(restaurant => renderOneRestaurant(restaurant)))
+}
+
 function showAllFilter(){
   let restaurantList = document.getElementById('restaurant-collection').getElementsByTagName('div')
   for (let i = 0; i < restaurantList.length; i++) {
     restaurantList[i].style.display = "inline-grid"
   }
+  let container = document.getElementById("restaurant-collection");
+  let cards = container.querySelectorAll(".card");
+  let sortedCards = Array.from(cards).sort(function(a, b) {
+    let restaurantA = a.querySelector('button').id;
+    let restaurantB = b.querySelector('button').id;
+    return restaurantA.localeCompare(restaurantB);
+  });
+  sortedCards.forEach(function(card) {
+    container.appendChild(card);
+  });
 }
 
 function alphabetizeFilter(){

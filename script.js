@@ -17,8 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let filter = document.getElementById('restaurant-dropdown')
     filter.addEventListener('change', () => {
-          if (filter.value === "a"){
-            alphabetize()
+          if (filter.value === "all"){
+            showAllFilter()
+          } else if (filter.value === "a"){
+            alphabetizeFilter()
           } else if (filter.value === "rating"){
             rateFilter()
           } else {
@@ -34,7 +36,8 @@ function handleSubmit(e){
     image: e.target.image.value,
     neighborhood: e.target.neighborhood.value,
     rating: e.target.rating.value,
-    comments: e.target.comments.value
+    comments: e.target.comments.value,
+    favorite: "no"
   }
   renderOneRestaurant(restaurantObj)
   postRestaurant(restaurantObj)
@@ -64,7 +67,16 @@ function renderOneRestaurant(restaurant){
   `
   
   card.querySelector('.favorite-btn').addEventListener('click', () => {
-    document.getElementById(`${restaurant.id}`).classList.toggle('favorited')
+    let className = document.getElementById(`${restaurant.id}`).classList
+    // document.getElementById(`${restaurant.id}`).classList.toggle('favorited')
+    if (restaurant.favorite === "no"){
+      restaurant.favorite = "yes"
+      className.add("favorited")
+    } else {
+      restaurant.favorite = "no"
+      className.remove("favorited")
+    }
+    handleFavorite(restaurant)
   })
 
   btn.addEventListener('click', () => {
@@ -75,6 +87,19 @@ function renderOneRestaurant(restaurant){
   //Add restaurant card to DOM
   card.appendChild(btn)
   document.querySelector('#restaurant-collection').appendChild(card)
+}
+
+function handleFavorite(restaurant){
+  fetch(`http://localhost:3000/restaurants/${restaurant.id}`, {
+    method: 'PATCH',
+    headers: {
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+    },
+
+    body: JSON.stringify(restaurant)
+  })
+  .then(res => res.json)
 }
 
 function deleteRestaurant(id){
@@ -100,7 +125,11 @@ function postRestaurant(restaurantObj){
   })
 }
 
-function alphabetize(){
+function showAllFilter(){
+
+}
+
+function alphabetizeFilter(){
   let container = document.getElementById("restaurant-collection");
   let cards = container.querySelectorAll(".card");
   let sortedCards = Array.from(cards).sort(function(a, b) {

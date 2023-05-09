@@ -6,7 +6,8 @@
       "image": "https://images.squarespace-cdn.com/content/v1/594a8fc04f14bcf90f3a113d/1600654519624-LXQXWIBO69BJ7KIJT4QQ/DSC04497.jpg?format=1500w",
       "neighborhood": "Lower East Side",
       "rating": 5,
-      "comments": "Lil' Frankie's is a NYC classic. Although seating is tight, the food is worth it. My two favorite items on the menu are the calamari and the spaghetti limone. I would recommend booking a reservation in advance."
+      "comments": "Lil' Frankie's is a NYC classic. Although seating is tight, the food is worth it. My two favorite items on the menu are the calamari and the spaghetti limone. I would recommend booking a reservation in advance.",
+      "favorite": "yes"
     },
     {
       "id": 2,
@@ -22,7 +23,8 @@
       "image": "https://i.etsystatic.com/5385818/r/il/202d66/1383959224/il_500x500.1383959224_4ktq.jpg",
       "neighborhood": "West Village",
       "rating": 5,
-      "comments": "I went here for brunch recently and got the chilaquiles, which was to die for. Only criticism I have is that it is a wine bar only, saw all cocktails are made with wine. I personally don't mind, but their blood mary's were weaker than average."
+      "comments": "I went here for brunch recently and got the chilaquiles, which was to die for. Only criticism I have is that it is a wine bar only, saw all cocktails are made with wine. I personally don't mind, but their blood mary's were weaker than average.",
+      "favorite": "yes"
     },
     {
       "id": 4,
@@ -30,7 +32,8 @@
       "image": "https://www.nycgo.com/images/venues/61041/misi-williamsburg-brooklyn-nyc-evan-sung-overhead-(credit-evan-sung)__large.jpg",
       "neighborhood": "Williamsburg",
       "rating": 5,
-      "comments": "I truly think Misi can do no wrong. Everything on the menu was a hit. Only downsides are that it is pretty difficult to get a reservation, and it is expensive."
+      "comments": "I truly think Misi can do no wrong. Everything on the menu was a hit. Only downsides are that it is pretty difficult to get a reservation, and it is expensive.",
+      "favorite": "no"
     },
     {
       "id": 5,
@@ -38,7 +41,8 @@
       "image": "https://naturacollective.com/wp-content/uploads/2019/05/074_Katie_Chris_Natura-Collective-Brooklyn-Wedding-Photographer301.jpg",
       "neighborhood": "Williamsburg",
       "rating": 5,
-      "comments": "Awesome food, cool ambiance, spicy bloody mary's. I love this place for brunch. It's extra awesome if you get the pleasure of sitting in their conservatory."
+      "comments": "Awesome food, cool ambiance, spicy bloody mary's. I love this place for brunch. It's extra awesome if you get the pleasure of sitting in their conservatory.",
+      "favorite": "no"
     }
   ]
 }

@@ -16,20 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('.add-restaurant-form').addEventListener('submit', handleSubmit)
 
     let filter = document.getElementById('restaurant-dropdown')
-    // let restaurantList = document.getElementById('restaurant-collection').getElementsByTagName('h2')
-
     filter.addEventListener('change', () => {
-      // for (let i = 0; i < restaurantList.length; i++) {
           if (filter.value === "a"){
             alphabetize()
-          } else if (filter.value === "z"){
-            reverseAlphabetize()
           } else if (filter.value === "rating"){
-
+            rateFilter()
           } else {
-
+            favoriteFilter()
           }
-        // }
     })
   });
 
@@ -110,15 +104,26 @@ function alphabetize(){
   let container = document.getElementById("restaurant-collection");
   let cards = container.querySelectorAll(".card");
   let sortedCards = Array.from(cards).sort(function(a, b) {
-    let textA = a.querySelector("h2").textContent;
-    let textB = b.querySelector("h2").textContent;
-    return textA.localeCompare(textB);
+    let restaurantA = a.querySelector("h2").textContent;
+    let restaurantB = b.querySelector("h2").textContent;
+    return restaurantA.localeCompare(restaurantB);
   });
   sortedCards.forEach(function(card) {
     container.appendChild(card);
   });
 }
 
-function reverseAlphabetize(){
+function rateFilter(){
   
+}
+
+function favoriteFilter(){
+  let restaurantList = document.getElementById('restaurant-collection').getElementsByTagName('div')
+  for (let i = 0; i < restaurantList.length; i++) {
+    if (restaurantList[i].querySelector('button').classList.value === 'favorite-btn favorited'){
+      restaurantList[i].style.display = "inline-grid"
+    } else {
+      restaurantList[i].style.display = "none"
+    }
+  }
 }

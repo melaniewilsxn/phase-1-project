@@ -87,6 +87,10 @@ function renderOneRestaurant(restaurant){
   //Add restaurant card to DOM
   card.appendChild(btn)
   document.querySelector('#restaurant-collection').appendChild(card)
+
+  if (restaurant.favorite === "yes"){
+    document.getElementById(`${restaurant.id}`).classList.add("favorited")
+  }
 }
 
 function handleFavorite(restaurant){
@@ -126,7 +130,10 @@ function postRestaurant(restaurantObj){
 }
 
 function showAllFilter(){
-
+  let restaurantList = document.getElementById('restaurant-collection').getElementsByTagName('div')
+  for (let i = 0; i < restaurantList.length; i++) {
+    restaurantList[i].style.display = "inline-grid"
+  }
 }
 
 function alphabetizeFilter(){

@@ -7,7 +7,7 @@
       "neighborhood": "Lower East Side",
       "rating": 5,
       "comments": "Lil' Frankie's is a NYC classic. Although seating is tight, the food is worth it. My two favorite items on the menu are the calamari and the spaghetti limone. I would recommend booking a reservation in advance.",
-      "favorite": "yes"
+      "favorite": "no"
     },
     {
       "id": 2,
@@ -15,7 +15,8 @@
       "image": "https://resizer.otstatic.com/v2/photos/xlarge/1/49513671.jpg",
       "neighborhood": "Tribeca",
       "rating": 5,
-      "comments": "This is a hole in the wall place for great wine, pasta, and creme brulee. No reservation necessary, as there is usually seating available at the bar after 8 pm. The Fettucine alla Bolognese and Lasagna della Mamma are both amazing."
+      "comments": "This is a hole in the wall place for great wine, pasta, and creme brulee. No reservation necessary, as there is usually seating available at the bar after 8 pm. The Fettucine alla Bolognese and Lasagna della Mamma are both amazing.",
+      "favorite": "no"
     },
     {
       "id": 3,
@@ -24,7 +25,7 @@
       "neighborhood": "West Village",
       "rating": 5,
       "comments": "I went here for brunch recently and got the chilaquiles, which was to die for. Only criticism I have is that it is a wine bar only, saw all cocktails are made with wine. I personally don't mind, but their blood mary's were weaker than average.",
-      "favorite": "yes"
+      "favorite": "no"
     },
     {
       "id": 4,

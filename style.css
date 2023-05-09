@@ -13,13 +13,27 @@ body {
 .container {
     text-align: center;
     justify-content: center;
+    line-height: 30px;
     margin: 10px auto;
     width: 55%;
     height: auto;
     display: none;
-    padding: 15px;
+    padding: 10px;
     border: grey solid 1px;
     box-shadow: 3px 4px #c6001e;
+}
+
+.container h3 {
+    font-size: 20px;
+    margin: 0px 10px;
+}
+
+input[type="text"] {
+    font-family: "Courier", monospace;
+}
+
+select {
+    font-family: "Courier", monospace;
 }
 
 .favorite-btn {

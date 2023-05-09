@@ -19,19 +19,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let filter = document.getElementById('restaurant-dropdown')
     filter.addEventListener('change', () => {
-          if (filter.value === "all"){
-            showAllFilter()
-          } else if (filter.value === "a"){
-            alphabetizeFilter()
-          } else if (filter.value === "z"){
-            alphabetizeFilter(1)
-          } else if (filter.value === "highRating"){
-            rateFilter(1)
-          } else if (filter.value === "lowRating"){
-            rateFilter()
-          } else {
-            favoriteFilter()
-          }
+      switch (filter.value) {
+        case "all":
+          showAllFilter();
+          break;
+        case "a":
+          alphabetizeFilter();
+          break;
+        case "z":
+          alphabetizeFilter(1);
+          break;
+        case "highRating":
+          rateFilter(1);
+          break;
+        case "lowRating":
+          rateFilter();
+          break;
+        default:
+          favoriteFilter();
+          break;
+      }
     })
   });
 
@@ -92,10 +99,10 @@ function renderOneRestaurant(restaurant){
   
   //Add restaurant card to DOM
   card.appendChild(btn)
-  document.querySelector('#restaurant-collection').appendChild(card)
+  document.getElementById('restaurant-collection').appendChild(card)
 
   if (restaurant.favorite === "yes"){
-    document.getElementById(`${restaurant.id}`).classList.add("favorited")
+    card.querySelector('.favorite-btn').classList.add("favorited")
   }
 }
 
@@ -136,59 +143,46 @@ function postRestaurant(restaurantObj){
 }
 
 function showRestaurants(){
-  let restaurantList = document.getElementById('restaurant-collection').getElementsByTagName('div')
-  for (let i = 0; i < restaurantList.length; i++) {
-    restaurantList[i].style.display = "inline-grid"
-  }
+  document.querySelectorAll('.card').forEach(card => {
+    card.style.display = "inline-grid";
+  });
 }
 
 function showAllFilter(){
-  showRestaurants()
-  let container = document.getElementById("restaurant-collection");
-  let cards = container.querySelectorAll(".card");
-  let sortedCards = Array.from(cards).sort(function(a, b) {
-    let restaurantA = a.querySelector('button').id;
-    let restaurantB = b.querySelector('button').id;
-    return restaurantA.localeCompare(restaurantB);
-  });
-  sortedCards.forEach(function(card) {
-    container.appendChild(card);
-  });
+  let cards = document.querySelectorAll("#restaurant-collection .card");
+  [...cards].sort((a, b) => a.querySelector("button").id.localeCompare(b.querySelector("button").id))
+           .forEach(card => document.getElementById("restaurant-collection").appendChild(card));
+  showRestaurants();
 }
 
 function alphabetizeFilter(n=0){
   showRestaurants()
   let container = document.getElementById("restaurant-collection");
-  let cards = container.querySelectorAll(".card");
-  let sortedCards = Array.from(cards).sort(function(a, b) {
-    let restaurantA = a.querySelector("h2").textContent;
-    let restaurantB = b.querySelector("h2").textContent;
+  let cards = Array.from(container.querySelectorAll(".card"))
+  cards.sort((a, b) => {
+    let restaurantA = a.querySelector('h2').textContent;
+    let restaurantB = b.querySelector('h2').textContent;
     return restaurantA.localeCompare(restaurantB);
   });
   if(n !== 0){
-    sortedCards.reverse()
+    cards.reverse()
   }
-  sortedCards.forEach(function(card) {
-    container.appendChild(card);
-  });
+  cards.forEach(card => container.appendChild(card));
 }
 
 function rateFilter(n=0){
   showRestaurants()
-  //console.log(document.getElementById("restaurant-collection").querySelector('h3').textContent)
   let container = document.getElementById("restaurant-collection");
-  let cards = container.querySelectorAll(".card");
-  let sortedCards = Array.from(cards).sort(function(a, b) {
-    let restaurantA = a.querySelector('h3').textContent;
-    let restaurantB = b.querySelector('h3').textContent;
-    return restaurantA.localeCompare(restaurantB);
+  let cards = Array.from(container.querySelectorAll(".card"))
+  cards.sort((a, b) => {
+    let ratingA = a.querySelector('h3').textContent;
+    let ratingB = b.querySelector('h3').textContent;
+    return ratingA.localeCompare(ratingB);
   });
   if(n !== 0){
-    sortedCards.reverse()
+    cards.reverse()
   }
-  sortedCards.forEach(function(card) {
-    container.appendChild(card);
-  });
+  cards.forEach(card => container.appendChild(card));
 }
 
 function favoriteFilter(){

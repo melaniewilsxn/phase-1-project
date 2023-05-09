@@ -134,11 +134,15 @@ function getRestaurantRating(){
   .then(restaurantData => restaurantData.forEach(restaurant => renderOneRestaurant(restaurant)))
 }
 
-function showAllFilter(){
+function showRestaurants(){
   let restaurantList = document.getElementById('restaurant-collection').getElementsByTagName('div')
   for (let i = 0; i < restaurantList.length; i++) {
     restaurantList[i].style.display = "inline-grid"
   }
+}
+
+function showAllFilter(){
+  showRestaurants()
   let container = document.getElementById("restaurant-collection");
   let cards = container.querySelectorAll(".card");
   let sortedCards = Array.from(cards).sort(function(a, b) {
@@ -152,6 +156,7 @@ function showAllFilter(){
 }
 
 function alphabetizeFilter(){
+  showRestaurants()
   let container = document.getElementById("restaurant-collection");
   let cards = container.querySelectorAll(".card");
   let sortedCards = Array.from(cards).sort(function(a, b) {
@@ -165,7 +170,7 @@ function alphabetizeFilter(){
 }
 
 function rateFilter(){
-  
+  showRestaurants()
 }
 
 function favoriteFilter(){

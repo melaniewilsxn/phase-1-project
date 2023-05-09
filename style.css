@@ -93,3 +93,17 @@ select {
     font-family: monospace;
     justify-self: center;
   }
+
+  input[type="submit"]  {
+    margin-top: 10px;
+    position: relative;
+    background-color: #c6001e;
+    border: none;
+    border-radius: 5px;
+    height: 2rem;
+    width: max-content;
+    color: #FFCE00;
+    font-size: 15px;
+    font-family: monospace;
+    justify-self: center;
+  }

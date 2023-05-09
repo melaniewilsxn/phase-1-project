@@ -8,8 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
       addRestaurant = !addRestaurant;
       if (addRestaurant) {
         restaurantFormContainer.style.display = "block";
+        document.querySelector("#new-restuarant-btn").textContent = "Nevermind!"
       } else {
         restaurantFormContainer.style.display = "none";
+        document.querySelector("#new-restuarant-btn").textContent = "I want to add a restaurant!"
       }
     });
     getAllRestaurants()
@@ -45,6 +47,7 @@ function handleSubmit(e){
   }
   renderOneRestaurant(restaurantObj)
   postRestaurant(restaurantObj)
+  document.querySelector('.add-restaurant-form').reset()
 }
 
 //Gets all restuarants from db.json file

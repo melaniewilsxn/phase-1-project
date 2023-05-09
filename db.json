@@ -39,14 +39,6 @@
       "neighborhood": "Williamsburg",
       "rating": 5,
       "comments": "Awesome food, cool ambiance, spicy bloody mary's. I love this place for brunch. It's extra awesome if you get the pleasure of sitting in their conservatory."
-    },
-    {
-      "name": "Casa Della Mozzarella",
-      "image": "https://res.cloudinary.com/the-infatuation/image/upload/q_auto,f_auto/images/NYC_CasaDellaMozzarella_Exterior_EmilySchindler_01_thai8n",
-      "neighborhood": "Bronx",
-      "rating": "5",
-      "comments": "Great mozzarella",
-      "id": 6
     }
   ]
 }

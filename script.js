@@ -41,7 +41,6 @@ function renderOneRestaurant(restaurant){
   let card = document.createElement('div')
   let btn = document.createElement('button')
   btn.textContent = 'Remove restaurant'
-  btn.addEventListener('click', handleDelete)
   card.className = 'card'
   card.innerHTML = `
   <h2>${restaurant.name}</h2>
@@ -56,14 +55,26 @@ function renderOneRestaurant(restaurant){
   card.querySelector('.favorite-btn').addEventListener('click', () => {
     document.getElementById(`${restaurant.id}`).classList.toggle('favorited')
   })
+
+  btn.addEventListener('click', () => {
+    card.remove()
+    deleteRestaurant(restaurant.id)
+  })
   
   //Add restaurant card to DOM
   card.appendChild(btn)
   document.querySelector('#restaurant-collection').appendChild(card)
 }
 
-function handleDelete(e){
-  e.target.parentNode.remove()
+function deleteRestaurant(id){
+  fetch(`http://localhost:3000/restaurants/${id}`, {
+    method: 'DELETE',
+    headers: {
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+    }
+  })
+  .then(res => res.json)
 }
 
 function postRestaurant(restaurantObj){

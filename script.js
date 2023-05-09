@@ -64,6 +64,7 @@ function getAllRestaurants(){
   .then(restaurantData => restaurantData.forEach(restaurant => renderOneRestaurant(restaurant)))
 }
 
+//Builds and adds restaurants to DOM
 function renderOneRestaurant(restaurant){
   //Build restaurant
   let card = document.createElement('div')
@@ -106,6 +107,7 @@ function renderOneRestaurant(restaurant){
   }
 }
 
+//Adds favorite to json
 function handleFavorite(restaurant){
   fetch(`http://localhost:3000/restaurants/${restaurant.id}`, {
     method: 'PATCH',
@@ -119,6 +121,7 @@ function handleFavorite(restaurant){
   .then(res => res.json)
 }
 
+//Deletes restaurant from json
 function deleteRestaurant(id){
   fetch(`http://localhost:3000/restaurants/${id}`, {
     method: 'DELETE',
@@ -130,6 +133,7 @@ function deleteRestaurant(id){
   .then(res => res.json)
 }
 
+//Posts restaurant to json
 function postRestaurant(restaurantObj){
   fetch("http://localhost:3000/restaurants", {
     method: 'POST',
@@ -142,12 +146,14 @@ function postRestaurant(restaurantObj){
   })
 }
 
+//Displays all restaurants on json
 function showRestaurants(){
   document.querySelectorAll('.card').forEach(card => {
     card.style.display = "inline-grid";
   });
 }
 
+//Orders all restaurants by their id number on json
 function showAllFilter(){
   let cards = document.querySelectorAll("#restaurant-collection .card");
   [...cards].sort((a, b) => a.querySelector("button").id.localeCompare(b.querySelector("button").id))
@@ -155,6 +161,7 @@ function showAllFilter(){
   showRestaurants();
 }
 
+//Orders all restaurants alphabetically
 function alphabetizeFilter(n=0){
   showRestaurants()
   let container = document.getElementById("restaurant-collection");
@@ -170,6 +177,7 @@ function alphabetizeFilter(n=0){
   cards.forEach(card => container.appendChild(card));
 }
 
+//Orders all restaurants by rating
 function rateFilter(n=0){
   showRestaurants()
   let container = document.getElementById("restaurant-collection");
@@ -185,6 +193,7 @@ function rateFilter(n=0){
   cards.forEach(card => container.appendChild(card));
 }
 
+//Shows only favorited restaurants
 function favoriteFilter(){
   let restaurantList = document.getElementById('restaurant-collection').getElementsByTagName('div')
   for (let i = 0; i < restaurantList.length; i++) {

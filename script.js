@@ -21,7 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
             showAllFilter()
           } else if (filter.value === "a"){
             alphabetizeFilter()
-          } else if (filter.value === "rating"){
+          } else if (filter.value === "z"){
+            alphabetizeFilter(1)
+          } else if (filter.value === "highRating"){
+            rateFilter(1)
+          } else if (filter.value === "lowRating"){
             rateFilter()
           } else {
             favoriteFilter()
@@ -128,12 +132,6 @@ function postRestaurant(restaurantObj){
   })
 }
 
-function getRestaurantRating(){
-  fetch("http://localhost:3000/restaurants")
-  .then(res => res.json())
-  .then(restaurantData => restaurantData.forEach(restaurant => renderOneRestaurant(restaurant)))
-}
-
 function showRestaurants(){
   let restaurantList = document.getElementById('restaurant-collection').getElementsByTagName('div')
   for (let i = 0; i < restaurantList.length; i++) {
@@ -155,7 +153,7 @@ function showAllFilter(){
   });
 }
 
-function alphabetizeFilter(){
+function alphabetizeFilter(n=0){
   showRestaurants()
   let container = document.getElementById("restaurant-collection");
   let cards = container.querySelectorAll(".card");
@@ -164,12 +162,15 @@ function alphabetizeFilter(){
     let restaurantB = b.querySelector("h2").textContent;
     return restaurantA.localeCompare(restaurantB);
   });
+  if(n !== 0){
+    sortedCards.reverse()
+  }
   sortedCards.forEach(function(card) {
     container.appendChild(card);
   });
 }
 
-function rateFilter(){
+function rateFilter(n=0){
   showRestaurants()
   //console.log(document.getElementById("restaurant-collection").querySelector('h3').textContent)
   let container = document.getElementById("restaurant-collection");
@@ -179,7 +180,9 @@ function rateFilter(){
     let restaurantB = b.querySelector('h3').textContent;
     return restaurantA.localeCompare(restaurantB);
   });
-  sortedCards.reverse()
+  if(n !== 0){
+    sortedCards.reverse()
+  }
   sortedCards.forEach(function(card) {
     container.appendChild(card);
   });

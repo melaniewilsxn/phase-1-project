@@ -28,13 +28,23 @@ BiteNYC is built with HTML, CSS, and JavaScript and uses the DOM to dynamically 
 
 6. If you've changed your mind and do not wish to add a restaurant anymore, click the "Nevermind!" button to hide the form.
 
+<img src="./my-images/screenshot2.png" alt="Screenshot 2" width="850" height="550">
+
 7. Fill out all of the necessary input fields on the form and hit "Add Restaurant" when you are ready. This will add the new restaurant card to the list of others, and also add it to the db.json file.
+
+<img src="./my-images/screenshot3.png" alt="Screenshot 3" width="850" height="550">
+
+<img src="./my-images/screenshot4.png" alt="Screenshot 4" width="850" height="550">
 
 8. You can add restaurants to your favorites list by clicking on the star icon.
 
 9. You can use the filters to sort the restaurants alphabetically, reverse alphabetically, by rating (high to low or low to high), and by whether they are on your favorites list. The "show all" filter will return the restaurants to their original order as they appear in the db.json file.
 
 10. To delete a restaurant, click on the "Remove restaurant" button. This will delete the restaurant from both the DOM and db.json. Note that you should not delete the first five restaurants listed in db.json.
+
+<img src="./my-images/screenshot5.png" alt="Screenshot 5" width="850" height="550">
+
+<img src="./my-images/screenshot6.png" alt="Screenshot 6" width="850" height="550">
 
 11. Enjoy exploring and adding to your restaurant collection!
 

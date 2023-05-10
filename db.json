@@ -44,6 +44,15 @@
       "rating": 5,
       "comments": "Awesome food, cool ambiance, spicy bloody mary's. I love this place for brunch. It's extra awesome if you get the pleasure of sitting in their conservatory.",
       "favorite": "no"
+    },
+    {
+      "name": "Casa Della Mozzarella",
+      "image": "https://res.cloudinary.com/the-infatuation/image/upload/q_auto,f_auto/images/NYC_CasaDellaMozzarella_Exterior_EmilySchindler_01_thai8n",
+      "neighborhood": "Bronx",
+      "rating": "5",
+      "comments": "One of my favorite places to visit for a quick sandwich and some Italian delicacies. All of the mozzarella is made fresh every day, and they are generous with the amount they add to the sandwiches.",
+      "favorite": "no",
+      "id": 6
     }
   ]
 }

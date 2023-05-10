@@ -28,6 +28,11 @@ body {
     margin: 0px 10px;
 }
 
+#new_restaurant_comments {
+    width: 400px;
+    height: 100px;
+}
+
 input[type="text"] {
     font-family: "Courier", monospace;
 }

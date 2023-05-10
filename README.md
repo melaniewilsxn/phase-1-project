@@ -24,7 +24,7 @@ BiteNYC is built with HTML, CSS, and JavaScript and uses the DOM to dynamically 
 
 5. To add a new restaurant, click on the "I want to add a restaurant!" button. The input form will appear.
 
-<img src="./my-images/screenshot1.png" alt="Screenshot 1" width="400" height="300">
+<img src="./my-images/screenshot1.png" alt="Screenshot 1" width="800" height="600">
 
 6. If you've changed your mind and do not wish to add a restaurant anymore, click the "Nevermind!" button to hide the form.
 

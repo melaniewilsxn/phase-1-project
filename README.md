@@ -50,10 +50,6 @@ BiteNYC is built with HTML, CSS, and JavaScript and uses the DOM to dynamically 
 
 ADDITIONAL NOTE: If you accidentally delete one of the first five restaurants from the, please revert the code to the most recent commit. Thank you!
 
-## Features
+## Credits
 
-## Contributing
-
-- As a user, you will be able to input all restaurant information into the form at the top of the page
-- As a user, you will be able to favorite and unfavoriite restuarants on your list
-- As a user, you will be
+This project was completed independently by me, Melanie Wilson. You can find my github profile at https://github.com/melaniewilsxn and my Linkedin profile at https://www.linkedin.com/in/melanie-wilson-b6501218a/. The logos on both the header and favicon were created using https://fontmeme.com/. All images were taken from google images.

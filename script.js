@@ -156,8 +156,11 @@ function showRestaurants(){
 //Orders all restaurants by their id number on json
 function showAllFilter(){
   let cards = document.querySelectorAll("#restaurant-collection .card");
-  [...cards].sort((a, b) => a.querySelector("button").id.localeCompare(b.querySelector("button").id))
-           .forEach(card => document.getElementById("restaurant-collection").appendChild(card));
+  [...cards].sort((a, b) => {
+    let restaurantA = a.querySelector("button").id;
+    let restaurantB = b.querySelector("button").id;
+    return restaurantA - restaurantB;
+  }).forEach(card => document.getElementById("restaurant-collection").appendChild(card));
   showRestaurants();
 }
 
